@@ -29,12 +29,11 @@ Ponto.prototype.getY = function() {
 // ========= VARIÁVEIS GLOBAIS =========
 var pointerGrabbed = false;
 var pointerDown = false;
-var clickableRadiusArea = 28;
 var currentPoint = new Ponto(0, 0);
 var currentCursorPoint = new Ponto(0, 0);
 
 // Inicialização de funções
-function checkPointer(pointer) {
+function checkPointer(pointer, radius) {
 	// Começar do ponto (0, 0) e ir até (100, 0)
 	if (pointer.isDown) {
 		currentPoint.x = pointer.x - graphics.x;
@@ -45,7 +44,10 @@ function checkPointer(pointer) {
 			pointerDown = true;
 			// verificamos se estamos na área clicável
 			// if (isPointerGrabbingCircle(currentPoint.x, currentPoint.y, currentCursorPoint.x, currentCursorPoint.y)) {
-			if (Phaser.Point.distance(currentPoint, currentCursorPoint) < clickableRadiusArea) {
+			if (radius == 'undefined') {
+				radius = clickableRadiusArea;
+			}
+			if (Phaser.Point.distance(currentPoint, currentCursorPoint) < radius) {
 				pointerGrabbed = true;
 			}
 		}
@@ -63,3 +65,5 @@ function checkPointer(pointer) {
 
 var SCREEN_WIDTH  = 800;
 var SCREEN_HEIGHT = 600;
+
+var clickableRadiusArea = 32;
