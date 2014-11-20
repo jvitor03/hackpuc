@@ -1,14 +1,19 @@
 var radFinished = false;
 p2 = new Phaser.Point(100, 0);
 var d2 = 0;
+var pontoatual = new Ponto(0,0);
 
 function radUpdate(game, pointer) {
-	pointer.onTap.add(funcao, this);
-	
+	if (pointer.isDown) {
+		console.log("teste");
+	};
+	debugRender();
 }
 
 function radRender(graphics) {
-debugRender();
+
+
+
 graphics.clear();	
 graphics.lineStyle(0);
 
@@ -27,7 +32,5 @@ function debugRender(){
 }
 
 function funcao(){
-	graphics.lineStyle(2, 0xFFFFFF,1);
-		graphics.moveTo(0,0);
-		graphics.lineTo(pointer.x,pointer.y);
+	
 }

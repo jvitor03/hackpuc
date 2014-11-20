@@ -9,7 +9,7 @@ function preload() {
 
 function create() {
 	graphics = game.add.graphics(game.world.centerX,game.world.centerY);
-	pointer = game.input;
+	pointer = game.input.activePointer;
 }
 
 function update() {
