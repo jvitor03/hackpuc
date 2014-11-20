@@ -13,7 +13,7 @@ function create() {
 }
 
 function update() {
-	if (piFinished) {
+	if (!piFinished) {
 		piUpdate(game, pointer);
 	} else if(!radFinished){
 		radUpdate(game, pointer);
