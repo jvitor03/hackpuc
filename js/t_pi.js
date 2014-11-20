@@ -1,4 +1,4 @@
-var piFinished = false;
+var piFinished = true;
 
 var initialPoint = new Ponto(0, 0);
 var destPoint = new Ponto(100, 0);
