@@ -1,0 +1,26 @@
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+
+CREATE SCHEMA IF NOT EXISTS `hackpuck` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+USE `hackpuck` ;
+
+-- -----------------------------------------------------
+-- Table `hackpuck`.`user`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `hackpuck`.`user` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `TIMESTAMP` VARCHAR(45) NULL,
+  `password` VARCHAR(45) NOT NULL,
+  `age` VARCHAR(45) NULL,
+  `formation` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC))
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
