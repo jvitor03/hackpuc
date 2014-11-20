@@ -36,9 +36,9 @@ function piexRender(graphics){
 	graphics.lineTo(600,50);
 	graphics.arc(-300 + dist,0,50,dist/50+1.9,dist/50+7.5);
 
-	graphics.beginFill(lnColor, 1);
-	graphics.drawCircle(currentCursorPoint.x, currentCursorPoint.y, 15);
-	graphics.endFill();
+	//graphics.beginFill(lnColor, 1);
+	//graphics.drawCircle(currentCursorPoint.x, currentCursorPoint.y, 15);
+	//graphics.endFill();
 }
 
 var y = 0;
@@ -51,12 +51,12 @@ function planoCartesiano(graphics){
 	y = 0;
 	graphics.moveTo(Math.PI*100 - 300,60);
 	graphics.lineTo(Math.PI*100 - 300,70);
-	text = game.add.text(94, 370, "0", {fontSize: '24px', fill:'#FFFFFF'});
+	//text = game.add.text(94, 370, "0", {fontSize: '24px', fill:'#FFFFFF'});
 	for (var x= 0; x<12;x++){
 		y = y+100;
 		graphics.moveTo(-600+y,40);
 		graphics.lineTo(-600+y,60);
-		text = game.add.text(-8+y, 370, (y/100)-1, {fontSize: '24px', fill:'#FFFFFF'});
+		//text = game.add.text(-8+y, 370, (y/100)-1, {fontSize: '24px', fill:'#FFFFFF'});
 	}
 
 }
