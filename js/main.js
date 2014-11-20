@@ -1,7 +1,7 @@
 var game = new Phaser.Game(SCREEN_WIDTH, SCREEN_HEIGHT, Phaser.AUTO, "", {create: create, update: update, render: render, preload: preload});
 
 var graphics; 
-var pointer; 
+var pointer;
 
 function preload() {
 
