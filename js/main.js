@@ -9,11 +9,11 @@ function preload() {
 
 function create() {
 	graphics = game.add.graphics(game.world.centerX,game.world.centerY);
-	pointer = game.input.addPointer();
+	pointer = game.input;
 }
 
 function update() {
-	if(!piFinished){
+	if (piFinished) {
 		piUpdate(game, pointer);
 	} else if(!radFinished){
 		radUpdate(game, pointer);
