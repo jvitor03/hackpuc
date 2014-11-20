@@ -1,7 +1,5 @@
 var piFinished = false;
 
-var currentPoint = new Ponto(0, 0);
-var currentCursorPoint = new Ponto(0, 0);
 var initialPoint = new Ponto(0, 0);
 var destPoint = new Ponto(100, 0);
 

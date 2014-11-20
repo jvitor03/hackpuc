@@ -25,6 +25,14 @@ Ponto.prototype.getY = function() {
 	return this.y;
 }
 
+
+// ========= VARIÁVEIS GLOBAIS =========
+var pointerGrabbed = false;
+var pointerDown = false;
+var clickableRadiusArea = 28;
+var currentPoint = new Ponto(0, 0);
+var currentCursorPoint = new Ponto(0, 0);
+
 // Inicialização de funções
 function checkPointer(pointer) {
 	// Começar do ponto (0, 0) e ir até (100, 0)
@@ -55,7 +63,3 @@ function checkPointer(pointer) {
 
 var SCREEN_WIDTH  = 800;
 var SCREEN_HEIGHT = 600;
-
-var pointerGrabbed = false;
-var pointerDown = false;
-var clickableRadiusArea = 28;
