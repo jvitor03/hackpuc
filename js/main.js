@@ -16,7 +16,7 @@ function update() {
 	if (!piFinished) {
 		piUpdate(game, pointer);
 	} else if(!radFinished){
-		radUpdate(game, pointer);
+		piexUpdate(game, pointer);
 	}
 }
 
@@ -24,6 +24,6 @@ function render() {
 	if(!piFinished){
 		piRender(graphics);
 	} else if(!radFinished){
-		radRender(graphics);
+		piexRender(graphics);
 	}
 }
