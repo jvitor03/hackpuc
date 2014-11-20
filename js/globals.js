@@ -44,9 +44,6 @@ function checkPointer(pointer, radius) {
 			pointerDown = true;
 			// verificamos se estamos na área clicável
 			// if (isPointerGrabbingCircle(currentPoint.x, currentPoint.y, currentCursorPoint.x, currentCursorPoint.y)) {
-			if (radius == 'undefined') {
-				radius = clickableRadiusArea;
-			}
 			if (Phaser.Point.distance(currentPoint, currentCursorPoint) < radius) {
 				pointerGrabbed = true;
 			}
