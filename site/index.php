@@ -58,14 +58,14 @@
             <!-- /.container-fluid -->
         </nav>
         <!-- Header -->
-        <header class="full-background" style="heigth:1000px;">
+        <header class="full-background">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header" style="color:#f90;">TEXTO!</h1>
                         <h1 class="page-header" style="color:#f60;">Motivacao</h1>
                         <h1 class="page-header" style="color:#f90;">Umpoucomaisdemotivacao</h1>
-                        <h1 class="page-header" style="color:#f90;">efodase</h1>
+
 
                         </div>
                     </div>
