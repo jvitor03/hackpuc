@@ -102,7 +102,6 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    SEU CANVAS AQUI
                     <canvas style="width:100%;"></canvas>
                 </div>
             </div>
@@ -134,7 +133,7 @@
                                             <ul class="list-group">
                                                 <li class="list-group-item">João Vitor</li>
                                                 <li class="list-group-item">Javascript</li>
-                                                <li class="list-group-item">github</li>
+                                                <li class="list-group-item"><a href="https://github.com/jvitor03"><i class="fa fa-2x fa-github"></i></a></li>
                                                 <li class="list-group-item"><i class="fa fa-phone"></i> 000-000-0000 </li>
                                                 <li class="list-group-item"><i class="fa fa-envelope"></i> j_vitor03@yahoo.com.br</li>
                                             </ul>
@@ -158,7 +157,7 @@
                                             <ul class="list-group">
                                                 <li class="list-group-item">Jonathas Luiz</li>
                                                 <li class="list-group-item">Design</li>
-                                                <li class="list-group-item">github</li>
+                                                <li class="list-group-item"><a href="https://www.facebook.com/JonathasLuiz"><i class="fa fa-2x fa-facebook"></i>acebook</a></li>
                                                 <li class="list-group-item"><i class="fa fa-phone"></i> 000-000-0000 </li>
                                                 <li class="list-group-item"><i class="fa fa-envelope"></i> email</li>
                                             </ul>
@@ -266,12 +265,15 @@
     <script src="js/cbpAnimatedHeader.js"></script>
     <script src="js/freelancer.js"></script>
     <!-- Phaser js-->
-    <script type="text/javascript" src="../js/main.js"></script>
+
     <script type="text/javascript" src="../js/phaser.min.js"></script>
     <script type="text/javascript" src="../js/globals.js"></script>
     <script type="text/javascript" src="../js/t_pi.js"></script>
     <script type="text/javascript" src="../js/t_rad.js"></script>
     <script type="text/javascript" src="../js/t_piexbranco.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+
+
 
 
 </body>
