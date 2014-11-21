@@ -90,7 +90,7 @@
                     <p>O Rabisque e Aprenda foi feito para ser o </p>
                 </div>
                 <div class="col-sm-4">
-                    <p>A gente desenvolvou esse projeto durante a HACKPUC 2014. O evento reuniu pessoas interessadas em desenvolver novidades e coisas diferentes
+                    <p>A gente desenvolveu esse projeto durante a HACKPUC 2014. O evento reuniu pessoas interessadas em desenvolver novidades e coisas diferentes
                     e inusitadas. Essa é apenas uma das muitas boas idéias que rolaram por lá.  </p>
                 </div>
                 <div class="col-sm-8 col-sm-offset-2 text-center">
@@ -109,8 +109,13 @@
                 </div>
             </div>
             <div class="row">
+<<<<<<< HEAD
+                <div class="col-lg-12">
+
+=======
                 <div class="col-lg-12" style="margin: 0 auto;">
                     <script type="text/javascript" src="../js/main.js"></script>
+>>>>>>> 726b725d3b63bbd929a8434c86c8345f684e15f8
                 </div>
             </div>
         </div>
@@ -272,6 +277,19 @@
     <script src="js/classie.js"></script>
     <script src="js/cbpAnimatedHeader.js"></script>
     <script src="js/freelancer.js"></script>
+<<<<<<< HEAD
+    <!-- Phaser js-->
+
+    <script type="text/javascript" src="../js/phaser.min.js"></script>
+    <script type="text/javascript" src="../js/globals.js"></script>
+    <script type="text/javascript" src="../js/t_pi.js"></script>
+    <script type="text/javascript" src="../js/t_rad.js"></script>
+    <script type="text/javascript" src="../js/t_piexbranco.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+
+
+=======
+>>>>>>> 726b725d3b63bbd929a8434c86c8345f684e15f8
 
 
 </body>
