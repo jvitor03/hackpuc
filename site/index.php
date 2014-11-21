@@ -85,7 +85,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-4 col-sm-offset-2">
-                    <p>O Rabisque e Aprenda foi feito para ser o </p>
+                    <p>O Rabisque e Aprenda foi feito para ser um ambiente de aprendizado interativo e intuitivo em diversas áreas. O projeto visa sair do paradigma das escolas e assim ajudar o aluno a enteder coisas que antes eram apenas aceitas por ele, através de exercícios práticos.</p>
                 </div>
                 <div class="col-sm-4">
                     <p>A gente desenvolveu esse projeto durante a HACKPUC 2014. O evento reuniu pessoas interessadas em desenvolver novidades e coisas diferentes
@@ -140,7 +140,7 @@
                                                 <li class="list-group-item">João Vitor</li>
                                                 <li class="list-group-item">Javascript</li>
                                                 <li class="list-group-item"><a href="https://github.com/jvitor03"><i class="fa fa-2x fa-github"></i> Github</a></li>
-                                                <li class="list-group-item"><i class="fa fa-phone"></i> 000-000-0000 </li>
+                                                <li class="list-group-item"><i class="fa fa-phone"></i> (21)983-127-755 </li>
                                                 <li class="list-group-item"><i class="fa fa-envelope"></i> j_vitor03@yahoo.com.br</li>
                                             </ul>
                                         </div>
@@ -164,7 +164,7 @@
                                                 <li class="list-group-item">Jonathas Luiz</li>
                                                 <li class="list-group-item">Design</li>
                                                 <li class="list-group-item"><a href="https://www.facebook.com/JonathasLuiz"><i class="fa fa-2x fa-facebook"></i>acebook</a></li>
-                                                <li class="list-group-item"><i class="fa fa-phone"></i> 000-000-0000 </li>
+                                                <li class="list-group-item"><i class="fa fa-phone"></i> (21)992-661-576 </li>
                                                 <li class="list-group-item"><i class="fa fa-envelope"></i> jonathas.dossantos@gmail.com</li>
                                             </ul>
                                         </div>
