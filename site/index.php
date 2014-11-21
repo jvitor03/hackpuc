@@ -86,9 +86,7 @@
                     <p>Aqui falamos sobre quando e oonde ele foi desenvolvido</p>
                 </div>
                 <div class="col-sm-8 col-sm-offset-2 text-center">
-                    <!-- <a href="#" class="btn btn-sm btn-outline">
-                                                                <i class="fa fa-download"></i> Download Theme
-                    </a> -->
+
                 </div>
             </div>
         </div>
@@ -104,7 +102,8 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <canvas style="width:100%; background-color:red;" ></canvas>
+                    SEU CANVAS AQUI
+                    <canvas style="width:100%;"></canvas>
                 </div>
             </div>
         </div>
@@ -137,7 +136,7 @@
                                                 <li class="list-group-item">Javascript</li>
                                                 <li class="list-group-item">github</li>
                                                 <li class="list-group-item"><i class="fa fa-phone"></i> 000-000-0000 </li>
-                                                <li class="list-group-item"><i class="fa fa-envelope"></i> john@example.com</li>
+                                                <li class="list-group-item"><i class="fa fa-envelope"></i> j_vitor03@yahoo.com.br</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -207,9 +206,9 @@
                                             <ul class="list-group">
                                                 <li class="list-group-item">Rafael Giordanno</li>
                                                 <li class="list-group-item">Javascript</li>
-                                                <li class="list-group-item">SheetColdGames</li>
+                                                <li class="list-group-item">SheetColdGames <i style="font-size:25px">|</i> <a href="https://github.com/RafaelGiordanno"><i class="fa fa-2x fa-github"></i></a></li>
                                                 <li class="list-group-item"><i class="fa fa-phone"></i> 000-000-0000 </li>
-                                                <li class="list-group-item"><i class="fa fa-envelope"></i> john@example.com</li>
+                                                <li class="list-group-item"><i class="fa fa-envelope"></i> rafael_giordanno@hotmail.com</li>
                                             </ul>
                                         </div>
                                     </div>
