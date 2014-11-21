@@ -5,14 +5,14 @@ var x = 0;
 var pontoatual = new Ponto(0,0);
 var boneco;
 function piexCreate(game){
-	boneco = game.add.sprite(graphics.x,graphics.y-200, 'boneco2');
+	boneco = game.add.sprite(graphics.x,graphics.y-200, 'boneco');
 	boneco.animations.add('idle', [0,1,2,3,4], 10, true);
-	boneco.animations.add('drag', [0,1,2,3], 10,true);
+	boneco.animations.add('drag', [5,6,7,8,9], 10,true);
+	boneco.animations.add('death', [10,11,12,13,14], 10, true);
 	//boneco.animations.add('smash', [0,1,2,3,4], 10, true);
 	
 	boneco.scale.setTo(0.5,0.5);
 
-	
 }
 
 var highlight = false;
@@ -24,6 +24,7 @@ var pos3x =200;
 var pos4x = 300;
 var pos5x = -100;
 var pos6x = -200;
+var dead = false;
 
 var win = false;
 var terminou = false;
@@ -54,10 +55,12 @@ function piexUpdate(game, pointer) {
 		//if(currentPoint.x )
 
 	} else{
-		boneco.animations.play('drag');
+		if(!dead){
+			boneco.animations.play('idle');
+		}
 		currentCursorPoint.set(boneco.x - 400,boneco.y - 300); //24, -188
 		highlight = false;
-		console.log(boneco.x);
+		//console.log(boneco.x);
 		if (isInPlace()){
 			win = true;
 		}
@@ -83,11 +86,11 @@ function piexUpdate(game, pointer) {
 	if (win && terminou){
 		disableGrid = true;
 	}
-
+	
 	//debugRender();
 }
 
-
+var go;
 
 function piexRender(graphics){
 
@@ -97,8 +100,16 @@ function piexRender(graphics){
 	graphics.moveTo(-600,50);
 	graphics.lineTo(600,50);
 	graphics.lineStyle(2, cor_circulo, 1);
-	
-	graphics.arc(-300 + dist,0,50,dist/50+1.9,dist/50+7.5);
+	go = -300+ dist
+	arco = graphics.arc(-300 + dist,0,50,dist/50+1.9,dist/50+7.5);
+
+	if (go+12 >= boneco.x - 400){
+		if(piActive && !isInPlace()){
+			boneco.animations.play('death');
+			dead = true;
+		}
+		
+	}
 
 	var cont = 0;
 	graphics.moveTo(0,0);
@@ -162,7 +173,7 @@ function isInPlace(){
 	if(boneco.x > 385 && boneco.x <= 400){
 		//if (boneco.y >= 330 && boneco.y <= 395 ){
 		if (boneco.y > 331 && boneco.y < 353){
-			console.log("te");
+			//console.log("te");
 			return true;
 
 		}
@@ -172,7 +183,7 @@ function isInPlace(){
 
 function start(){
 	if (boneco.y >= 331 && boneco.y < 353){
-		console.log("ste");
+		//console.log("ste");
 		return true;
 	}
 	return false;

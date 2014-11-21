@@ -5,9 +5,9 @@ var pointer;
 
 function preload() {
 	//game.load.image('boneco', 'assets/boneco2.png');
-	game.load.spritesheet('boneco', 'assets/drag_SS.png', 50, 100);
+	game.load.spritesheet('boneco', 'assets/spritesheet.png', 50, 100);
 	//game.load.spritesheet('boneco2', 'assets/head_smash_SS.png', 50, 100);
-	game.load.spritesheet('boneco2', 'assets/ground_iddle_SS.png',50 ,100);
+	//game.load.spritesheet('boneco2', 'assets/ground_iddle_SS.png',50 ,100);
 }
 
 function create() {
