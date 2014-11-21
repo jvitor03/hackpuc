@@ -33,7 +33,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#page-top">Rabisque E Aprenda</a>
+                    <a class="navbar-brand logo-text" href="#page-top">Rabisque E Aprenda</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -62,8 +62,8 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <img src="http://media-cache-ak0.pinimg.com/236x/4c/08/9d/4c089d63af940a60068ad5d47be560a8.jpg" alt="">
-                        <h1 class="page-header">NOMEDOAPP</h1>
-                        <h1 class="page-header">Porque a matemática é apenas um jogo</h1>
+                        <h1 class="page-header logo-text">Rabisque e Aprenda</h1>
+                        <h1 class="page-header logo-text">Quem disse que matemática não é divertida?</h1>
                     </div>
                 </div>
             </div>

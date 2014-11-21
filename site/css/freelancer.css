@@ -3,6 +3,7 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
+ @import url(http://fonts.googleapis.com/css?family=Indie+Flower);
 
 body {
     overflow-x: hidden;
@@ -452,3 +453,6 @@ footer .footer-below {
     background-size: 100% auto;
 }
 
+.logo-text{
+    font-family: 'Indie Flower', cursive;
+}
