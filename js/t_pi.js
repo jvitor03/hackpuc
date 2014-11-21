@@ -3,7 +3,7 @@
 // os nomes como algo significativo, então pode acabar me confundindo
 // Por essa razão, eu irei trabalhar com as variáveis de forma que elas
 // tenham nomes significativos referentes aos seus passos
-var piFinished = true;
+var piFinished = false;
 
 var initialPoint = new Ponto(0, 0);
 var destPoint = new Ponto(100, 0);
@@ -14,10 +14,12 @@ var bgLineSize = 2;
 
 var bgColor = 0x000000;
 var bgLnColor = 0x777777;
-var lnColor = 0xFFFFFF;
+var lnColor = 0x18bc9c;
+
+// Cores #18bc9c
 
 // var piStepDone = new Array(false, false, false, false);
-var piStepDone = new Array(true, true, true, false);
+var piStepDone = new Array(false, false, false, false);
 
 // variáveis relacionadas ao passo zero: do ponto para a reta
 var piStep0InitialPoint = new Ponto(0, 0);
@@ -55,11 +57,15 @@ var piStep3VerticalLineStart = new Ponto(-300, -150);
 var piStep3Angle = 0;
 var piStep3CircleToLine = 0;
 
+var piStateTime = 0;
+
 /**
  * @param game Contexto game criado na página principal
  */
 function piUpdate(game, pointer) {
-	
+	piStateTime += game.time.elapsed;
+
+	console.log(piStateTime);
 	if (!piStepDone[0]) {
 		checkPointer(pointer, clickableRadiusArea);
 		piStepZero();
@@ -78,7 +84,6 @@ function piUpdate(game, pointer) {
 
 function piStepZero() {
 	if (pointerGrabbed) {
-		console.log(currentPoint.x);
 		currentCursorPoint.x = Phaser.Math.clamp(currentPoint.x, piStep0InitialPoint.x, piStep0DestPoint.x);
 		if (currentCursorPoint.x == piStep0DestPoint.x) {
 			piStepDone[0] = true;
@@ -172,8 +177,6 @@ function piStepThree() {
 			tmp = Math.atan2(currentPoint.y, currentPoint.x+300);
 		}
 
-		console.log(piStep3QuadOk);
-
 		if (tmp > 2.7) {
 			piStep3QuadOk = true;
 		} else if (tmp > Math.PI-.4) {
@@ -245,6 +248,13 @@ function piRender(graphics) {
 	}
 
 	// Vamos criar o beginFill(cor, alpha)
+	drawCurrentPointer(graphics);
+}
+
+function drawCurrentPointer(graphics) {
+	if (piStateTime % 1024 < 64) {
+		graphics.drawCircle(currentCursorPoint.x, currentCursorPoint.y, currentPointerRadius + piStateTime % 1024);
+	}
 	graphics.beginFill(lnColor, 1);
 	graphics.drawCircle(currentCursorPoint.x, currentCursorPoint.y, currentPointerRadius);
 	graphics.endFill();
