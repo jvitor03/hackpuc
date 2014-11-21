@@ -62,9 +62,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header" style="color:#f90;">TEXTO!</h1>
-                        <h1 class="page-header" style="color:#f60;">Motivacao</h1>
-                        <h1 class="page-header" style="color:#f90;">Umpoucomaisdemotivacao</h1>
+                    <img src="http://media-cache-ak0.pinimg.com/236x/4c/08/9d/4c089d63af940a60068ad5d47be560a8.jpg" alt="">
+                        <h1 class="page-header">TEXTO!</h1>
+                        <h1 class="page-header">Umpoucomaisdemotivacao</h1>
 
 
                         </div>

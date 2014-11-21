@@ -445,11 +445,10 @@ footer .footer-below {
 }
 
 .full-background{
-    background: url('http://theperfecttangent.files.wordpress.com/2010/07/goldenratiofitpage1.jpg') no-repeat center center fixed;
+    background-color: #5DC564;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: 100% auto;
- 
 }
 
