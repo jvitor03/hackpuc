@@ -16,7 +16,8 @@ var bgColor = 0x000000;
 var bgLnColor = 0x777777;
 var lnColor = 0xFFFFFF;
 
-var piStepDone = new Array(false, false, false);
+// var piStepDone = new Array(false, false, false, false);
+var piStepDone = new Array(true, true, true, false);
 
 // variáveis relacionadas ao passo zero: do ponto para a reta
 var piStep0InitialPoint = new Ponto(0, 0);
@@ -43,7 +44,16 @@ var piStep2CirclesCenters = new Array (
 var piStep2CircleRadius = 100;
 var piStep2CircleDiameter = 200;
 
-// variáveis relacionadas a puxar o círculo
+var piStep2PhantomCircle = false;
+
+var piStep2CircleSelected = new Array(false, false ,false);
+var piStep2FilledCircles = 0;
+
+// variáveis relacionadas a "puxar" o círculo
+var piStep3InitialPoint = new Ponto(-300, 100);
+var piStep3VerticalLineStart = new Ponto(-300, -150);
+var piStep3Angle = 0;
+var piStep3CircleToLine = 0;
 
 /**
  * @param game Contexto game criado na página principal
@@ -59,6 +69,9 @@ function piUpdate(game, pointer) {
 	} else if (!piStepDone[2]) {
 		checkPointer(pointer, clickableRadiusArea * 2);
 		piStepTwo();
+	} else if (!piStepDone[3]) {
+		checkPointer(pointer, clickableRadiusArea);
+		piStepThree();
 	}
 	debugRender(game);
 }
@@ -109,9 +122,6 @@ function piStepOne() {
 
 }
 
-var piStep2PhantomCircle = false;
-var piStep2GrabbingCircle = false;
-
 function piStepTwo() {
 	if (pointerGrabbed) {
 		piStep2PhantomCircle = true;
@@ -119,14 +129,69 @@ function piStepTwo() {
 		currentCursorPoint.y = currentPoint.y;
 
 	} else {
-		currentCursorPoint.x = piStep2OriginalCircleCenter.x;
-		currentCursorPoint.y = piStep2OriginalCircleCenter.y;
 		if (piStep2PhantomCircle) {
 			piStep2PhantomCircle = false;
 			// verifica se o círculo foi jogado próximo de outro círculo
 			// A tolerância é razoável
+			for (var i = 0; i < piStep2CirclesCenters.length; i++) {
+				if (Phaser.Point.distance(piStep2CirclesCenters[i], currentCursorPoint) < 32) {
+					piStep2CircleSelected[i] = true;
+				}
+			}
 		}
 		
+		currentCursorPoint.x = piStep2OriginalCircleCenter.x;
+		currentCursorPoint.y = piStep2OriginalCircleCenter.y;
+	}
+	for (var i = 0; i < piStep2CircleSelected.length; i++) {
+		if (piStep2CircleSelected[i]) {
+			piStep2FilledCircles++;
+		} else {
+			piStep2FilledCircles = 0;
+		}
+	}
+	if (piStep2FilledCircles == piStep2CircleSelected.length) {
+		// Vamo esticar esse círculo?
+		piStepDone[2] = true;
+	}
+}
+
+var piStep3QuadOk = false;
+
+function piStepThree() {
+	if (pointerGrabbed) {
+		var tmp;
+		var tmp2;
+
+		// tmp2 = Math.atan2(-(currentPoint.y), -(currentPoint.x+300));
+		tmp2 = Math.atan2(-(currentPoint.x+300), -(currentPoint.y));
+
+		if (!piStep3QuadOk) {
+			tmp = Phaser.Math.clamp(Math.atan2(currentPoint.y, currentPoint.x+300), Math.PI/2, Math.PI);
+		} else {
+			tmp = Math.atan2(currentPoint.y, currentPoint.x+300);
+		}
+
+		console.log(piStep3QuadOk);
+
+		if (tmp > 2.7) {
+			piStep3QuadOk = true;
+		} else if (tmp > Math.PI-.4) {
+			piStep3QuadOk = false;
+		}
+
+		piStep3Angle = tmp;
+		currentCursorPoint.x = Math.cos(piStep3Angle) * piStep1Radius - 300;
+		currentCursorPoint.y = Math.sin(piStep3Angle) * piStep1Radius;
+	
+		piStep3CircleToLine = -(100 * tmp2) + 300;
+	} else {
+		currentCursorPoint.x = piStep3InitialPoint.x;
+		currentCursorPoint.y = piStep3InitialPoint.y;
+		piStep3Angle = Math.PI/2;
+		piStep3QuadOk = false;
+		tmp2 = 0;
+		piStep3CircleToLine = 0;
 	}
 }
 
@@ -138,17 +203,38 @@ function piRender(graphics) {
 
 	// Redefinir linestyle
 	// linestyle(larguraDaLinha, cor, alpha);
-	graphics.lineStyle(lineSize, lnColor, 1);
-	
+	graphics.lineStyle(lineSize, lnColor, 1);	
+
 	// arc ( cx  cy  radius  startAngle  endAngle  anticlockwise )
 	// graphics.arc(0, 0, 100, 0, Math.PI*11/5, true);
-	if (piStepDone[1]) {
-		graphics.drawCircle(piStep2OriginalCircleCenter.x, piStep2OriginalCircleCenter.y, piStep1Diameter);
+	if (piStepDone[2]) {
+		// Desenhar o grid vertical
+		for (var i = 0; i < 4; i++) {
+			graphics.moveTo(piStep3VerticalLineStart.x + i*200, piStep3VerticalLineStart.y);
+			graphics.lineTo(piStep3VerticalLineStart.x + i*200, piStep3VerticalLineStart.y + 300);
+		}
+
+		// Arco que vai ser desenrolado
+		// O objetivo é sair de Math.PI/2 e chegar até Math.PI*5/2
+		// Então vamos incrementando o valor do ângulo dentro de Math.PI
+		if (piStep3Angle >= Math.PI/2) {
+			graphics.arc(-300+piStep3CircleToLine, 0, 100, Math.PI*5/2, piStep3Angle, true);
+		} else {
+			graphics.arc(-300+piStep3CircleToLine, 0, 100, piStep3Angle, Math.PI*5/2, true);
+		}
+
+		graphics.moveTo(-300, 100);
+		graphics.lineTo(-300 + piStep3CircleToLine, 100);
+
+		// vamos pegar emprestado os círculos do passo anterior
+	} else if (piStepDone[1]) {
+		drawStep2Circles(graphics);
+		
 		// Vamos desenhar um fantasma, caso ele exista...
 		if (piStep2PhantomCircle) {
 			graphics.lineStyle(lineSize, lnColor, .3);
 			graphics.drawCircle(currentCursorPoint.x, currentCursorPoint.y, 200);
-		}
+		}		
 	} else if (piStepDone[0]) {
 		graphics.moveTo(piStep0InitialPoint.x, piStep0InitialPoint.y);
 		graphics.lineTo(currentCursorPoint.x, currentCursorPoint.y);
@@ -162,6 +248,16 @@ function piRender(graphics) {
 	graphics.beginFill(lnColor, 1);
 	graphics.drawCircle(currentCursorPoint.x, currentCursorPoint.y, currentPointerRadius);
 	graphics.endFill();
+}
+
+function drawStep2Circles() {
+	graphics.drawCircle(piStep2OriginalCircleCenter.x, piStep2OriginalCircleCenter.y, piStep1Diameter);
+	// Vamos desenhar os círculos já determinados
+	for (var i = 0; i < piStep2CircleSelected.length; i++) {
+		if (piStep2CircleSelected[i]) {
+			graphics.drawCircle(piStep2CirclesCenters[i].x, piStep2CirclesCenters[i].y, 200);
+		}
+	}
 }
 
 function backgroundRender(graphics) {
@@ -182,6 +278,18 @@ function backgroundRender(graphics) {
 			graphics.drawCircle(piStep2CirclesCenters[i].x, piStep2CirclesCenters[i].y, 200);
 		}
 		
+	} else if (!piStepDone[3]) {
+		graphics.drawCircle(piStep2OriginalCircleCenter.x + piStep3CircleToLine, piStep2OriginalCircleCenter.y, piStep1Diameter);
+		// Vamos desenhar os círculos já determinados
+		for (var i = 0; i < piStep2CircleSelected.length; i++) {
+			if (piStep2CircleSelected[i]) {
+				graphics.drawCircle(piStep2CirclesCenters[i].x, piStep2CirclesCenters[i].y, 200);
+			}
+		}
+
+		// Desenhar linha horizontal de suporte
+		graphics.moveTo(-SCREEN_WIDTH, 100);
+		graphics.lineTo(SCREEN_WIDTH, 100);
 	}
 }
 
