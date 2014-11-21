@@ -83,7 +83,7 @@
                     <p>O Rabisque e Aprenda foi feito para ser o </p>
                 </div>
                 <div class="col-sm-4">
-                    <p>A gente desenvolvou esse projeto durante a HACKPUC 2014. O evento reuniu pessoas interessadas em desenvolver novidades e coisas diferentes
+                    <p>A gente desenvolveu esse projeto durante a HACKPUC 2014. O evento reuniu pessoas interessadas em desenvolver novidades e coisas diferentes
                     e inusitadas. Essa é apenas uma das muitas boas idéias que rolaram por lá.  </p>
                 </div>
                 <div class="col-sm-8 col-sm-offset-2 text-center">
@@ -103,7 +103,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <canvas style="width:100%;"></canvas>
+
                 </div>
             </div>
         </div>
@@ -272,7 +272,7 @@
     <script type="text/javascript" src="../js/t_pi.js"></script>
     <script type="text/javascript" src="../js/t_rad.js"></script>
     <script type="text/javascript" src="../js/t_piexbranco.js"></script>
-    <script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
 
 
 
