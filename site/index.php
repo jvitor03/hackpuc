@@ -185,7 +185,7 @@
                                                 <li class="list-group-item">Front-End</li>
                                                 <li class="list-group-item"><a href="https://github.com/redheadevans"><i class="fa fa-2x fa-github"></i></a> <i style="font-size:25px;">|</i> <a href="https://www.passeidireto.com/perfil/2227014/">Passei Direto</a></li>
                                                 <li class="list-group-item"><i class="fa fa-phone"></i> 982-786-6440 </li>
-                                                <li class="list-group-item"><i class="fa fa-envelope"></i> john@example.com</li>
+                                                <li class="list-group-item"><i class="fa fa-envelope"></i> leonardo.goncalves.2711@gmail.com</li>
                                             </ul>
                                         </div>
                                     </div>
