@@ -58,10 +58,13 @@
             <!-- /.container-fluid -->
         </nav>
         <!-- Header -->
-        <header class="full-background">
+        <header class="full-background" style="heigth:1000px;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
+                        <h1 class="page-header">TEXTO!</h1>
+                        <h1 class="page-header">Nome do APP</h1>
+                        <h1 class="page-header">Nome do APP</h1>
                         <h1 class="page-header">Nome do APP</h1>
 
                         </div>
