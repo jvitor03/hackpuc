@@ -61,7 +61,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <img src="http://media-cache-ak0.pinimg.com/236x/4c/08/9d/4c089d63af940a60068ad5d47be560a8.jpg" alt="">
+                        <img src="img/logoemprestada.jpg" height="171" width="236" alt="">
                         <h1 class="page-header logo-text">Rabisque e Aprenda</h1>
                         <h1 class="page-header logo-text">Quem disse que matemática não é divertida?</h1>
                     </div>
@@ -83,7 +83,8 @@
                     <p>O Rabisque e Aprenda foi feito para ser o </p>
                 </div>
                 <div class="col-sm-4">
-                    <p>Aqui falamos sobre quando e oonde ele foi desenvolvido</p>
+                    <p>A gente desenvolvou esse projeto durante a HACKPUC 2014. O evento reuniu pessoas interessadas em desenvolver novidades e coisas diferentes
+                    e inusitadas. Essa é apenas uma das muitas boas idéias que rolaram por lá.  </p>
                 </div>
                 <div class="col-sm-8 col-sm-offset-2 text-center">
 
@@ -96,7 +97,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 text-center">
-                    <h2>Exercícios</h2>
+                    <h2>Brinque</h2>
                     <hr class="star-primary">
                 </div>
             </div>
@@ -133,7 +134,7 @@
                                             <ul class="list-group">
                                                 <li class="list-group-item">João Vitor</li>
                                                 <li class="list-group-item">Javascript</li>
-                                                <li class="list-group-item"><a href="https://github.com/jvitor03"><i class="fa fa-2x fa-github"></i></a></li>
+                                                <li class="list-group-item"><a href="https://github.com/jvitor03"><i class="fa fa-2x fa-github"></i> Github</a></li>
                                                 <li class="list-group-item"><i class="fa fa-phone"></i> 000-000-0000 </li>
                                                 <li class="list-group-item"><i class="fa fa-envelope"></i> j_vitor03@yahoo.com.br</li>
                                             </ul>
@@ -159,7 +160,7 @@
                                                 <li class="list-group-item">Design</li>
                                                 <li class="list-group-item"><a href="https://www.facebook.com/JonathasLuiz"><i class="fa fa-2x fa-facebook"></i>acebook</a></li>
                                                 <li class="list-group-item"><i class="fa fa-phone"></i> 000-000-0000 </li>
-                                                <li class="list-group-item"><i class="fa fa-envelope"></i> email</li>
+                                                <li class="list-group-item"><i class="fa fa-envelope"></i> jonathas.dossantos@gmail.com</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -181,7 +182,7 @@
                                             <ul class="list-group">
                                                 <li class="list-group-item">Leonardo Gonçalves</li>
                                                 <li class="list-group-item">Front-End</li>
-                                                <li class="list-group-item"><a href="https://github.com/redheadevans"><i class="fa fa-2x fa-github"></i></a> <i style="font-size:25px;">|</i> <a href="https://www.passeidireto.com/perfil/2227014/">Passei Direto</a></li>
+                                                <li class="list-group-item"><a href="https://github.com/redheadevans"><i class="fa fa-2x fa-github"></i> Github</a> <i style="font-size:25px;">|</i> <a href="https://www.passeidireto.com/perfil/2227014/">Passei Direto</a></li>
                                                 <li class="list-group-item"><i class="fa fa-phone"></i> 982-786-6440 </li>
                                                 <li class="list-group-item"><i class="fa fa-envelope"></i> leonardo.goncalves.2711@gmail.com</li>
                                             </ul>
@@ -205,7 +206,7 @@
                                             <ul class="list-group">
                                                 <li class="list-group-item">Rafael Giordanno</li>
                                                 <li class="list-group-item">Javascript</li>
-                                                <li class="list-group-item">SheetColdGames <i style="font-size:25px">|</i> <a href="https://github.com/RafaelGiordanno"><i class="fa fa-2x fa-github"></i></a></li>
+                                                <li class="list-group-item">SheetColdGames <i style="font-size:25px">|</i> <a href="https://github.com/RafaelGiordanno"><i class="fa fa-2x fa-github"></i> Github</a></li>
                                                 <li class="list-group-item"><i class="fa fa-phone"></i> 000-000-0000 </li>
                                                 <li class="list-group-item"><i class="fa fa-envelope"></i> rafael_giordanno@hotmail.com</li>
                                             </ul>
