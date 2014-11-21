@@ -33,7 +33,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#page-top">nomedoapp</a>
+                    <a class="navbar-brand logo-text" href="#page-top">Rabisque E Aprenda</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -62,8 +62,8 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <img src="http://media-cache-ak0.pinimg.com/236x/4c/08/9d/4c089d63af940a60068ad5d47be560a8.jpg" alt="">
-                        <h1 class="page-header">NOMEDOAPP</h1>
-                        <h1 class="page-header">Porque a matemática é apenas um jogo</h1>
+                        <h1 class="page-header logo-text">Rabisque e Aprenda</h1>
+                        <h1 class="page-header logo-text">Quem disse que matemática não é divertida?</h1>
                     </div>
                 </div>
             </div>
@@ -74,21 +74,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 text-center">
-                    <h2>Let's Play</h2>
+                    <h2>O que é isso?</h2>
                     <hr class="star-light">
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-4 col-sm-offset-2">
-                    <p>Aqui faremos uma explicação sobre o que o nosso app se propoe e a quem ele é direcionado</p>
+                    <p>O Rabisque e Aprenda foi feito para ser o </p>
                 </div>
                 <div class="col-sm-4">
                     <p>Aqui falamos sobre quando e oonde ele foi desenvolvido</p>
                 </div>
                 <div class="col-sm-8 col-sm-offset-2 text-center">
-                    <!-- <a href="#" class="btn btn-sm btn-outline">
-                                                                <i class="fa fa-download"></i> Download Theme
-                    </a> -->
+
                 </div>
             </div>
         </div>
@@ -104,7 +102,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <canvas style="width:100%; background-color:red;" ></canvas>
+                    <canvas style="width:100%;"></canvas>
                 </div>
             </div>
         </div>
@@ -135,9 +133,9 @@
                                             <ul class="list-group">
                                                 <li class="list-group-item">João Vitor</li>
                                                 <li class="list-group-item">Javascript</li>
-                                                <li class="list-group-item">github</li>
+                                                <li class="list-group-item"><a href="https://github.com/jvitor03"><i class="fa fa-2x fa-github"></i></a></li>
                                                 <li class="list-group-item"><i class="fa fa-phone"></i> 000-000-0000 </li>
-                                                <li class="list-group-item"><i class="fa fa-envelope"></i> john@example.com</li>
+                                                <li class="list-group-item"><i class="fa fa-envelope"></i> j_vitor03@yahoo.com.br</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -159,7 +157,7 @@
                                             <ul class="list-group">
                                                 <li class="list-group-item">Jonathas Luiz</li>
                                                 <li class="list-group-item">Design</li>
-                                                <li class="list-group-item">github</li>
+                                                <li class="list-group-item"><a href="https://www.facebook.com/JonathasLuiz"><i class="fa fa-2x fa-facebook"></i>acebook</a></li>
                                                 <li class="list-group-item"><i class="fa fa-phone"></i> 000-000-0000 </li>
                                                 <li class="list-group-item"><i class="fa fa-envelope"></i> email</li>
                                             </ul>
@@ -183,9 +181,9 @@
                                             <ul class="list-group">
                                                 <li class="list-group-item">Leonardo Gonçalves</li>
                                                 <li class="list-group-item">Front-End</li>
-                                                <li class="list-group-item">google inc.</li>
-                                                <li class="list-group-item"><i class="fa fa-phone"></i> 000-000-0000 </li>
-                                                <li class="list-group-item"><i class="fa fa-envelope"></i> john@example.com</li>
+                                                <li class="list-group-item"><a href="https://github.com/redheadevans"><i class="fa fa-2x fa-github"></i></a> <i style="font-size:25px;">|</i> <a href="https://www.passeidireto.com/perfil/2227014/">Passei Direto</a></li>
+                                                <li class="list-group-item"><i class="fa fa-phone"></i> 982-786-6440 </li>
+                                                <li class="list-group-item"><i class="fa fa-envelope"></i> leonardo.goncalves.2711@gmail.com</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -207,9 +205,9 @@
                                             <ul class="list-group">
                                                 <li class="list-group-item">Rafael Giordanno</li>
                                                 <li class="list-group-item">Javascript</li>
-                                                <li class="list-group-item">google inc.</li>
+                                                <li class="list-group-item">SheetColdGames <i style="font-size:25px">|</i> <a href="https://github.com/RafaelGiordanno"><i class="fa fa-2x fa-github"></i></a></li>
                                                 <li class="list-group-item"><i class="fa fa-phone"></i> 000-000-0000 </li>
-                                                <li class="list-group-item"><i class="fa fa-envelope"></i> john@example.com</li>
+                                                <li class="list-group-item"><i class="fa fa-envelope"></i> rafael_giordanno@hotmail.com</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -267,8 +265,16 @@
     <script src="js/cbpAnimatedHeader.js"></script>
     <script src="js/freelancer.js"></script>
     <!-- Phaser js-->
-    <script type="text/javascript" src="js/phaser.min.js"></script>
-    <script type="text/javascript" src="js/constants.js"></script>
-    <script type="text/javascript" src="js/teste.js"></script>
+
+    <script type="text/javascript" src="../js/phaser.min.js"></script>
+    <script type="text/javascript" src="../js/globals.js"></script>
+    <script type="text/javascript" src="../js/t_pi.js"></script>
+    <script type="text/javascript" src="../js/t_rad.js"></script>
+    <script type="text/javascript" src="../js/t_piexbranco.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+
+
+
+
 </body>
 </html>
