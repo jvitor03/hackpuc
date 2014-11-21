@@ -34,7 +34,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+                    <a class="navbar-brand" href="#page-top">nomedoapp</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -62,10 +62,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">TEXTO!</h1>
-                        <h1 class="page-header">Nome do APP</h1>
-                        <h1 class="page-header">Nome do APP</h1>
-                        <h1 class="page-header">Nome do APP</h1>
+                        <h1 class="page-header" style="color:#f90;">TEXTO!</h1>
+                        <h1 class="page-header" style="color:#f60;">Motivacao</h1>
+                        <h1 class="page-header" style="color:#f90;">Umpoucomaisdemotivacao</h1>
+                        <h1 class="page-header" style="color:#f90;">efodase</h1>
 
                         </div>
                     </div>
