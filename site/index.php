@@ -33,7 +33,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#page-top">nomedoapp</a>
+                    <a class="navbar-brand" href="#page-top">Rabisque E Aprenda</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -267,8 +267,13 @@
     <script src="js/cbpAnimatedHeader.js"></script>
     <script src="js/freelancer.js"></script>
     <!-- Phaser js-->
-    <script type="text/javascript" src="js/phaser.min.js"></script>
-    <script type="text/javascript" src="js/constants.js"></script>
-    <script type="text/javascript" src="js/teste.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/phaser.min.js"></script>
+    <script type="text/javascript" src="../js/globals.js"></script>
+    <script type="text/javascript" src="../js/t_pi.js"></script>
+    <script type="text/javascript" src="../js/t_rad.js"></script>
+    <script type="text/javascript" src="../js/t_piexbranco.js"></script>
+
+
 </body>
 </html>
