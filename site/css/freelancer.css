@@ -443,3 +443,17 @@ footer .footer-below {
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
 }
+
+.full-background{
+    background: url('http://wallpaper.mostpopularimages.org/hash/seamless-pattern-samples/6/1/a/61a-18832493.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: 100% auto;
+ 
+}
+
+#bg{
+    background:url('../img/con_bg4.png') no-repeat center center;
+    height: 500px;
+}
