@@ -3,25 +3,23 @@ var game = new Phaser.Game(SCREEN_WIDTH, SCREEN_HEIGHT, Phaser.AUTO, "game", {cr
 var graphics; 
 var pointer;
 
+var piText;
+
 function preload() {
 	//game.load.image('boneco', 'assets/boneco2.png');
 	game.load.spritesheet('boneco', 'assets/spritesheet.png', 50, 100);
+	game.load.image('pi', 'assets/pi.png');
 	//game.load.spritesheet('boneco2', 'assets/head_smash_SS.png', 50, 100);
 	//game.load.spritesheet('boneco2', 'assets/ground_iddle_SS.png',50 ,100);
 }
 
-var tweenTest;
-
 function create() {
-	tweenTest = game.add.tween(currentCursorPoint);
 	game.stage.backgroundColor = 0xf2f2f2;
 	graphics = game.add.graphics(game.world.centerX,game.world.centerY);
 	pointer = game.input.activePointer;
-	if (!piFinished) {
-		//piUpdate(game);
-	} else if(!piexFinished){
-		piexCreate(game);
-	}
+	piText = game.add.sprite(1000, 1000, 'pi');
+
+	piexCreate(game);
 }
 
 function update() {

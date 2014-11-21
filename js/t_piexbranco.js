@@ -5,14 +5,14 @@ var x = 0;
 var pontoatual = new Ponto(0,0);
 var boneco;
 function piexCreate(game){
-	boneco = game.add.sprite(graphics.x,graphics.y-200, 'boneco');
+	// boneco = game.add.sprite(graphics.x,graphics.y-200, 'boneco');
+	boneco = game.add.sprite(900, 1000, 'boneco');
 	boneco.animations.add('idle', [0,1,2,3,4], 10, true);
 	boneco.animations.add('drag', [5,6,7,8,9], 10,true);
 	boneco.animations.add('death', [10,11,12,13,14], 10, true);
 	//boneco.animations.add('smash', [0,1,2,3,4], 10, true);
 	
 	boneco.scale.setTo(0.5,0.5);
-
 }
 
 var highlight = false;
@@ -172,7 +172,7 @@ function isInPlace(){
 	//if (boneco.x >= 380 && boneco.x <= 455){
 	if(boneco.x > 385 && boneco.x <= 400){
 		//if (boneco.y >= 330 && boneco.y <= 395 ){
-		if (boneco.y > 331 && boneco.y < 353){
+		if (boneco.y > 331 && boneco.y < 340){
 			//console.log("te");
 			return true;
 
@@ -182,7 +182,7 @@ function isInPlace(){
 }
 
 function start(){
-	if (boneco.y >= 331 && boneco.y < 353){
+	if (boneco.y >= 331 && boneco.y < 340){
 		//console.log("ste");
 		return true;
 	}

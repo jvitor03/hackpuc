@@ -18,8 +18,8 @@ var lnColor = 0x18bc9c;
 
 // Cores #18bc9c
 
-// var piStepDone = new Array(false, false, false, false);
 var piStepDone = new Array(false, false, false, false);
+// var piStepDone = new Array(true, true, true, false);
 
 // variáveis relacionadas ao passo zero: do ponto para a reta
 var piStep0InitialPoint = new Ponto(0, 0);
@@ -35,6 +35,7 @@ var piStep1RadiansLimit;
 var piStep1QuadOk = false;
 
 // variáveis relacionadas ao passo dois: "copiar" círculos
+var piStep2TransitionPoint = new Ponto(0, 0);
 var piStep2OriginalCircleCenter = new Ponto(-300, 0);
 
 var piStep2CirclesCenters = new Array (
@@ -52,6 +53,22 @@ var piStep2CircleSelected = new Array(false, false ,false);
 var piStep2FilledCircles = 0;
 
 // variáveis relacionadas a "puxar" o círculo
+var piStep3TransitionVerticalLines = new Array(
+	new Ponto(-300, 100), // ponto inicial
+	new Ponto(-300, 100), // ponto final
+
+	new Ponto(-100, 100), // ponto inicial
+	new Ponto(-100, 100), // ponto final
+
+	new Ponto(100, 100),  // ponto inicial
+	new Ponto(100, 100),  // ponto final
+
+	new Ponto(300, 100), // ponto inicial
+	new Ponto(300, 100) // ponto final
+);
+
+var piStep3TransitionVerticalLength = 300;
+
 var piStep3InitialPoint = new Ponto(-300, 100);
 var piStep3VerticalLineStart = new Ponto(-300, -150);
 var piStep3Angle = 0;
@@ -59,16 +76,30 @@ var piStep3CircleToLine = 0;
 
 var piStateTime = 0;
 
+var piTransition = false;
+
+var endTime = 0;
+
 /**
  * @param game Contexto game criado na página principal
  */
 function piUpdate(game, pointer) {
 	piStateTime += game.time.elapsed;
 
-	if (!piStepDone[0]) {
+	if (piTransition) {
+		if (piStepDone[3]) {
+		} else if (piStepDone[2] ) {
+			createVerticalLines();
+		} else if (piStepDone[1]) {
+			// transição do círculo para a esquerda
+			transitionToTheLeft();
+		} else if (piStepDone[0]) {
+			
+		}
+	} else if (!piStepDone[0]) {
 		checkPointer(pointer, clickableRadiusArea);
 		piStepZero();
-	} else if (!piStepDone[1]) {
+	} else if (!piStepDone[1] ) {
 		checkPointer(pointer, clickableRadiusArea);
 		piStepOne();
 	} else if (!piStepDone[2]) {
@@ -77,6 +108,50 @@ function piUpdate(game, pointer) {
 	} else if (!piStepDone[3]) {
 		checkPointer(pointer, clickableRadiusArea);
 		piStepThree();
+	} else {
+		currentCursorPoint.x = -300;
+		currentCursorPoint.y = 100;
+		endTime += game.time.elapsed;
+
+		if (endTime > 4000) {
+			piText.kill();
+			piFinished = true;
+			pointerGrabbed = false;
+			boneco.x = graphics.x;
+			boneco.y = graphics.y-200;
+		}
+	}
+}
+
+/*
+ * Move o círculo principal para a esquerda e introduz os outros de forma devagar
+ */
+function transitionToTheLeft() {
+	piStep2TransitionPoint.x = Phaser.Math.interpolateFloat(piStep2TransitionPoint.x, piStep2OriginalCircleCenter.x, .1);
+	currentCursorPoint.x = piStep2TransitionPoint.x;
+	currentCursorPoint.y = piStep2TransitionPoint.y;
+	if (Phaser.Point.distance(piStep2TransitionPoint, piStep2OriginalCircleCenter) < 2) {
+		piTransition = false;
+	}
+}
+
+// + 300
+function createVerticalLines() {
+	// Desenhar o grid vertical
+	currentCursorPoint.y = Phaser.Math.interpolateFloat(currentCursorPoint.y, piStep3InitialPoint.y, .6);
+
+	for (var i = 0; i < 8; i += 2) {
+		if (Phaser.Point.distance(piStep3TransitionVerticalLines[i], piStep3TransitionVerticalLines[i+1]) > 298) {
+			continue;
+		} 
+
+		piStep3TransitionVerticalLines[i+1].y = Phaser.Math.interpolateFloat(piStep3TransitionVerticalLines[i+1].y, 
+				piStep3TransitionVerticalLines[i].y - piStep3TransitionVerticalLength, .1);
+		break;
+	
+	}
+	if (Phaser.Point.distance(piStep3TransitionVerticalLines[6], piStep3TransitionVerticalLines[7]) > 298) {
+		piTransition = false;
 	}
 }
 
@@ -110,9 +185,10 @@ function piStepOne() {
 		currentCursorPoint.x = Math.cos(piStep1RadiansAtan2) * piStep1Radius;
 		currentCursorPoint.y = Math.sin(piStep1RadiansAtan2) * piStep1Radius;
 
-		if (piStep1QuadOk && piStep1RadiansAtan2 < .3 && piStep1RadiansAtan2 > 0) {
+		if (piStep1QuadOk && piStep1RadiansAtan2 < .2 && piStep1RadiansAtan2 > 0) {
 			piStepDone[1] = true;
 			pointerGrabbed = false;
+			piTransition = true;
 		}
 	} else {
 		currentCursorPoint.x = piStep1InitialPoint.x;
@@ -154,6 +230,7 @@ function piStepTwo() {
 	if (piStep2FilledCircles == piStep2CircleSelected.length) {
 		// Vamo esticar esse círculo?
 		piStepDone[2] = true;
+		piTransition = true;
 	}
 }
 
@@ -168,22 +245,37 @@ function piStepThree() {
 		tmp2 = Math.atan2(-(currentPoint.x+300), -(currentPoint.y));
 
 		if (!piStep3QuadOk) {
-			tmp = Phaser.Math.clamp(Math.atan2(currentPoint.y, currentPoint.x+300), Math.PI/2, Math.PI);
+			// tmp = Phaser.Math.clamp(Math.atan2(currentPoint.y, currentPoint.x+300), Math.PI/2, Math.PI);
 		} else {
-			tmp = Math.atan2(currentPoint.y, currentPoint.x+300);
+			// tmp = Math.atan2(currentPoint.y, currentPoint.x+300);
 		}
-
+		tmp = Math.atan2(currentPoint.y, currentPoint.x+300);
+		/*
 		if (tmp > 2.7) {
 			piStep3QuadOk = true;
 		} else if (tmp > Math.PI-.4) {
 			piStep3QuadOk = false;
 		}
+		*/
+
+		/*
+		if (currentCursorPoint.x > -370 && currentCursorPoint.y < -70) {
+			piStep3QuadOk = false;
+		} else {
+			piStep3QuadOk = true;
+		}
+		*/
 
 		piStep3Angle = tmp;
 		currentCursorPoint.x = Math.cos(piStep3Angle) * piStep1Radius - 300;
 		currentCursorPoint.y = Math.sin(piStep3Angle) * piStep1Radius;
 	
 		piStep3CircleToLine = -(100 * tmp2) + 300;
+
+		if (piStep3CircleToLine > 600) {
+			piStepDone[3] = true;
+		}
+		
 	} else {
 		currentCursorPoint.x = piStep3InitialPoint.x;
 		currentCursorPoint.y = piStep3InitialPoint.y;
@@ -206,13 +298,13 @@ function piRender(graphics) {
 
 	// arc ( cx  cy  radius  startAngle  endAngle  anticlockwise )
 	// graphics.arc(0, 0, 100, 0, Math.PI*11/5, true);
-	if (piStepDone[2]) {
-		// Desenhar o grid vertical
-		for (var i = 0; i < 4; i++) {
-			graphics.moveTo(piStep3VerticalLineStart.x + i*200, piStep3VerticalLineStart.y);
-			graphics.lineTo(piStep3VerticalLineStart.x + i*200, piStep3VerticalLineStart.y + 300);
-		}
+	if (piStepDone[3]) {
+		piText.x = 580;
+		piText.y = 200;
 
+		graphics.moveTo(-300, 100);
+		graphics.lineTo(-300 + Math.PI*200, 100);
+	} else if (piStepDone[2]) {
 		// Arco que vai ser desenrolado
 		// O objetivo é sair de Math.PI/2 e chegar até Math.PI*5/2
 		// Então vamos incrementando o valor do ângulo dentro de Math.PI
@@ -227,7 +319,11 @@ function piRender(graphics) {
 
 		// vamos pegar emprestado os círculos do passo anterior
 	} else if (piStepDone[1]) {
-		drawStep2Circles(graphics);
+		if (piTransition) {
+			graphics.drawCircle(piStep2TransitionPoint.x, piStep2TransitionPoint.y, piStep1Diameter);
+		} else {
+			drawStep2Circles(graphics);
+		}
 		
 		// Vamos desenhar um fantasma, caso ele exista...
 		if (piStep2PhantomCircle) {
@@ -282,20 +378,55 @@ function backgroundRender(graphics) {
 	} else if (!piStepDone[2]) {
 		graphics.lineStyle(2, bgLnColor, 1);
 		for (var i = 0; i < piStep2CirclesCenters.length; i++) {
-			graphics.drawCircle(piStep2CirclesCenters[i].x, piStep2CirclesCenters[i].y, 200);
+			if (piTransition) {
+				graphics.drawCircle(piStep2CirclesCenters[i].x, piStep2CirclesCenters[i].y, 200);
+			} else {
+				graphics.drawCircle(piStep2CirclesCenters[i].x, piStep2CirclesCenters[i].y, 200);
+			}
+			
 		}
+		// Desenhar linha horizontal de suporte
+		graphics.moveTo(-SCREEN_WIDTH, 100);
+		graphics.lineTo(SCREEN_WIDTH, 100);
 		
 	} else if (!piStepDone[3]) {
 		graphics.drawCircle(piStep2OriginalCircleCenter.x + piStep3CircleToLine, piStep2OriginalCircleCenter.y, piStep1Diameter);
 		// Vamos desenhar os círculos já determinados
+		/*
 		for (var i = 0; i < piStep2CircleSelected.length; i++) {
 			if (piStep2CircleSelected[i]) {
 				graphics.drawCircle(piStep2CirclesCenters[i].x, piStep2CirclesCenters[i].y, 200);
 			}
 		}
+		*/
 
+		if (piTransition) {
+			for (var i = 0; i < piStep2CircleSelected.length; i++) {
+				if (piStep2CircleSelected[i]) {
+					graphics.drawCircle(piStep2CirclesCenters[i].x, piStep2CirclesCenters[i].y, 200);
+				}
+			}
+		}
+		// Desenhar o grid vertical
+		for (var i = 0; i < piStep3TransitionVerticalLines.length; i += 2) {
+			// graphics.moveTo(piStep3VerticalLineStart.x + i*200, piStep3VerticalLineStart.y);
+			// graphics.lineTo(piStep3VerticalLineStart.x + i*200, piStep3VerticalLineStart.y + 300);
+			graphics.moveTo(piStep3TransitionVerticalLines[i].x, piStep3TransitionVerticalLines[i].y);
+			graphics.lineTo(piStep3TransitionVerticalLines[i+1].x, piStep3TransitionVerticalLines[i+1].y);
+		}
 		// Desenhar linha horizontal de suporte
 		graphics.moveTo(-SCREEN_WIDTH, 100);
 		graphics.lineTo(SCREEN_WIDTH, 100);
+	} else {
+		graphics.moveTo(-SCREEN_WIDTH, 100);
+		graphics.lineTo(SCREEN_WIDTH, 100);
+
+		// Desenhar o grid vertical
+		for (var i = 0; i < piStep3TransitionVerticalLines.length; i += 2) {
+			// graphics.moveTo(piStep3VerticalLineStart.x + i*200, piStep3VerticalLineStart.y);
+			// graphics.lineTo(piStep3VerticalLineStart.x + i*200, piStep3VerticalLineStart.y + 300);
+			graphics.moveTo(piStep3TransitionVerticalLines[i].x, piStep3TransitionVerticalLines[i].y);
+			graphics.lineTo(piStep3TransitionVerticalLines[i+1].x, piStep3TransitionVerticalLines[i+1].y);
+		}
 	}
 }
