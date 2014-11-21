@@ -128,13 +128,61 @@
                                     <div class="col-lg-12">
                                         <div class="col-xs-12 col-sm-4">
                                             <figure>
-                                                <img class="img-circle img-responsive" alt="" src="http://placehold.it/300x300">
+                                                <img class="img-circle img-responsive" alt="" src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash2/v/t1.0-1/c0.0.160.160/p160x160/561841_486953381329588_727720518_n.jpg?oh=a3dc146d016b1d42b6c1df8e6fcafafb&oe=551D17E4&__gda__=1427438336_558ecca754f302120a9d1e39345006e1">
                                             </figure>
                                         </div>
                                         <div class="col-xs-12 col-sm-8">
                                             <ul class="list-group">
-                                                <li class="list-group-item">John Doe</li>
-                                                <li class="list-group-item">Senior Software Engineer</li>
+                                                <li class="list-group-item">João Vitor</li>
+                                                <li class="list-group-item">Javascript</li>
+                                                <li class="list-group-item">github</li>
+                                                <li class="list-group-item"><i class="fa fa-phone"></i> 000-000-0000 </li>
+                                                <li class="list-group-item"><i class="fa fa-envelope"></i> john@example.com</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-lg-6 col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading resume-heading">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="col-xs-12 col-sm-4">
+                                            <figure>
+                                                <img class="img-circle img-responsive" alt="" src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xap1/v/t1.0-1/c0.6.160.160/p160x160/10525897_4307762510089_3949196514162545590_n.jpg?oh=a27231dec5d78bed91a364476d7e8425&oe=5511B291&__gda__=1423604381_46f97a83d84ccb701d0080619378290e">
+                                            </figure>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-8">
+                                            <ul class="list-group">
+                                                <li class="list-group-item">Jonathas Luiz</li>
+                                                <li class="list-group-item">Design</li>
+                                                <li class="list-group-item">github</li>
+                                                <li class="list-group-item"><i class="fa fa-phone"></i> 000-000-0000 </li>
+                                                <li class="list-group-item"><i class="fa fa-envelope"></i> email</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-lg-6 col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading resume-heading">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="col-xs-12 col-sm-4">
+                                            <figure>
+                                                <img class="img-circle img-responsive" alt="" src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/v/t1.0-1/p160x160/983786_957973260895848_7276685222141180582_n.jpg?oh=d5d915a16b7607f9bd5d92ea68578506&oe=55199C29&__gda__=1423579215_a5135c37726cf52e6f5de0c7612ea74c">
+                                            </figure>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-8">
+                                            <ul class="list-group">
+                                                <li class="list-group-item">Leonardo Gonçalves</li>
+                                                <li class="list-group-item">Front-End</li>
                                                 <li class="list-group-item">google inc.</li>
                                                 <li class="list-group-item"><i class="fa fa-phone"></i> 000-000-0000 </li>
                                                 <li class="list-group-item"><i class="fa fa-envelope"></i> john@example.com</li>
@@ -152,61 +200,13 @@
                                     <div class="col-lg-12">
                                         <div class="col-xs-12 col-sm-4">
                                             <figure>
-                                                <img class="img-circle img-responsive" alt="" src="http://placehold.it/300x300">
+                                                <img class="img-circle img-responsive" alt="" src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash2/v/t1.0-1/c0.0.160.160/p160x160/579143_422498297854233_1556419460_n.jpg?oh=3903f3db0e9471b35ec59b0da2e85bbc&oe=54E1193C&__gda__=1427365486_bbb2041dd4d8bbcc2618bbd8599acb9c">
                                             </figure>
                                         </div>
                                         <div class="col-xs-12 col-sm-8">
                                             <ul class="list-group">
-                                                <li class="list-group-item">John Doe</li>
-                                                <li class="list-group-item">Senior Software Engineer</li>
-                                                <li class="list-group-item">google inc.</li>
-                                                <li class="list-group-item"><i class="fa fa-phone"></i> 000-000-0000 </li>
-                                                <li class="list-group-item"><i class="fa fa-envelope"></i> john@example.com</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-lg-6 col-md-6">
-                        <div class="panel panel-default">
-                            <div class="panel-heading resume-heading">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="col-xs-12 col-sm-4">
-                                            <figure>
-                                                <img class="img-circle img-responsive" alt="" src="http://placehold.it/300x300">
-                                            </figure>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-8">
-                                            <ul class="list-group">
-                                                <li class="list-group-item">John Doe</li>
-                                                <li class="list-group-item">Senior Software Engineer</li>
-                                                <li class="list-group-item">google inc.</li>
-                                                <li class="list-group-item"><i class="fa fa-phone"></i> 000-000-0000 </li>
-                                                <li class="list-group-item"><i class="fa fa-envelope"></i> john@example.com</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-lg-6 col-md-6">
-                        <div class="panel panel-default">
-                            <div class="panel-heading resume-heading">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="col-xs-12 col-sm-4">
-                                            <figure>
-                                                <img class="img-circle img-responsive" alt="" src="http://placehold.it/300x300">
-                                            </figure>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-8">
-                                            <ul class="list-group">
-                                                <li class="list-group-item">John Doe</li>
-                                                <li class="list-group-item">Senior Software Engineer</li>
+                                                <li class="list-group-item">Rafael Giordanno</li>
+                                                <li class="list-group-item">Javascript</li>
                                                 <li class="list-group-item">google inc.</li>
                                                 <li class="list-group-item"><i class="fa fa-phone"></i> 000-000-0000 </li>
                                                 <li class="list-group-item"><i class="fa fa-envelope"></i> john@example.com</li>
@@ -227,7 +227,7 @@
             <div class="container">
                 <div class="row">
                     <div class="footer-col col-sm-6 col-md-offset-3">
-                        <h3>O projeto está no github, se quiser dar uma olhada e quem sabe, dar uma forcinha</h3>
+                        <h3>O projeto está no github. Fique a vontade para dar uma olhada clicando no gatinho ali embaixo.</h3>
                         <a href="#" class="">
                         <i class="fa fa-5x fa-github"></i>
                         </a>
@@ -235,7 +235,7 @@
                 </div>
                 <div class="row">
                     <div class="footer-col col-sm-6 text-center col-md-offset-3">
-                        <h3>sim, usamos bootstrap</h3>
+                        <h3>E sim, usamos bootstrap!</h3>
                         <p>dá só uma olhada nesse lindo do <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
                     </div>
                 </div>
