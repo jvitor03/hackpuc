@@ -65,7 +65,6 @@ var piStateTime = 0;
 function piUpdate(game, pointer) {
 	piStateTime += game.time.elapsed;
 
-	console.log(piStateTime);
 	if (!piStepDone[0]) {
 		checkPointer(pointer, clickableRadiusArea);
 		piStepZero();
@@ -79,7 +78,6 @@ function piUpdate(game, pointer) {
 		checkPointer(pointer, clickableRadiusArea);
 		piStepThree();
 	}
-	debugRender(game);
 }
 
 function piStepZero() {
@@ -116,8 +114,6 @@ function piStepOne() {
 			piStepDone[1] = true;
 			pointerGrabbed = false;
 		}
-		// currentCursorPoint.x = currentPoint.x;
-		// currentCursorPoint.y = currentPoint.y;
 	} else {
 		currentCursorPoint.x = piStep1InitialPoint.x;
 		currentCursorPoint.y = piStep1InitialPoint.y;
@@ -252,11 +248,12 @@ function piRender(graphics) {
 }
 
 function drawCurrentPointer(graphics) {
-	if (piStateTime % 1024 < 64) {
-		graphics.drawCircle(currentCursorPoint.x, currentCursorPoint.y, currentPointerRadius + piStateTime % 1024);
+	if (piStateTime % 1024 < 128) {
+		graphics.drawCircle(currentCursorPoint.x, currentCursorPoint.y, currentPointerRadius + Math.sin(pointer)*12);
 	}
+
 	graphics.beginFill(lnColor, 1);
-	graphics.drawCircle(currentCursorPoint.x, currentCursorPoint.y, currentPointerRadius);
+	graphics.drawCircle(currentCursorPoint.x, currentCursorPoint.y, currentPointerRadius + (pointerGrabbed ? (Math.sin(pointer.duration/397)+Math.PI*2) : 0));
 	graphics.endFill();
 }
 
@@ -301,8 +298,4 @@ function backgroundRender(graphics) {
 		graphics.moveTo(-SCREEN_WIDTH, 100);
 		graphics.lineTo(SCREEN_WIDTH, 100);
 	}
-}
-
-function debugRender(game) {
-	game.debug.pointer(game.input.mousePointer);
 }
