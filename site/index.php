@@ -108,7 +108,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <div id="game"></div>
+                    <div id="game" style="margin-left:15%"></div>
                 </div>
             </div>
         </div>
