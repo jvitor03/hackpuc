@@ -1,4 +1,4 @@
-var game = new Phaser.Game(SCREEN_WIDTH, SCREEN_HEIGHT, Phaser.AUTO, "", {create: create, update: update, render: render, preload: preload});
+var game = new Phaser.Game(SCREEN_WIDTH, SCREEN_HEIGHT, Phaser.AUTO, "game", {create: create, update: update, render: render, preload: preload});
 
 var graphics; 
 var pointer;
@@ -10,7 +10,10 @@ function preload() {
 	//game.load.spritesheet('boneco2', 'assets/ground_iddle_SS.png',50 ,100);
 }
 
+var tweenTest;
+
 function create() {
+	tweenTest = game.add.tween(currentCursorPoint);
 	game.stage.backgroundColor = 0xf2f2f2;
 	graphics = game.add.graphics(game.world.centerX,game.world.centerY);
 	pointer = game.input.activePointer;
