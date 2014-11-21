@@ -20,6 +20,13 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+        <!-- Phaser js-->
+
+        <script type="text/javascript" src="../js/phaser.min.js"></script>
+        <script type="text/javascript" src="../js/globals.js"></script>
+        <script type="text/javascript" src="../js/t_pi.js"></script>
+        <script type="text/javascript" src="../js/t_rad.js"></script>
+        <script type="text/javascript" src="../js/t_piexbranco.js"></script>
     </head>
     <body id="page-top" class="index">
         <!-- Navigation -->
@@ -102,8 +109,13 @@
                 </div>
             </div>
             <div class="row">
+<<<<<<< HEAD
                 <div class="col-lg-12">
 
+=======
+                <div class="col-lg-12" style="margin: 0 auto;">
+                    <script type="text/javascript" src="../js/main.js"></script>
+>>>>>>> 726b725d3b63bbd929a8434c86c8345f684e15f8
                 </div>
             </div>
         </div>
@@ -265,6 +277,7 @@
     <script src="js/classie.js"></script>
     <script src="js/cbpAnimatedHeader.js"></script>
     <script src="js/freelancer.js"></script>
+<<<<<<< HEAD
     <!-- Phaser js-->
 
     <script type="text/javascript" src="../js/phaser.min.js"></script>
@@ -275,6 +288,8 @@
 <script type="text/javascript" src="../js/main.js"></script>
 
 
+=======
+>>>>>>> 726b725d3b63bbd929a8434c86c8345f684e15f8
 
 
 </body>
