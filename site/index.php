@@ -14,6 +14,8 @@
         <link href="font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -22,11 +24,7 @@
         <![endif]-->
         <!-- Phaser js-->
 
-        <script type="text/javascript" src="../js/phaser.min.js"></script>
-        <script type="text/javascript" src="../js/globals.js"></script>
-        <script type="text/javascript" src="../js/t_pi.js"></script>
-        <script type="text/javascript" src="../js/t_rad.js"></script>
-        <script type="text/javascript" src="../js/t_piexbranco.js"></script>
+
     </head>
     <body id="page-top" class="index">
         <!-- Navigation -->
@@ -109,13 +107,8 @@
                 </div>
             </div>
             <div class="row">
-<<<<<<< HEAD
                 <div class="col-lg-12">
-
-=======
-                <div class="col-lg-12" style="margin: 0 auto;">
-                    <script type="text/javascript" src="../js/main.js"></script>
->>>>>>> 726b725d3b63bbd929a8434c86c8345f684e15f8
+                    <div id="game"></div>
                 </div>
             </div>
         </div>
@@ -277,19 +270,16 @@
     <script src="js/classie.js"></script>
     <script src="js/cbpAnimatedHeader.js"></script>
     <script src="js/freelancer.js"></script>
-<<<<<<< HEAD
     <!-- Phaser js-->
 
-    <script type="text/javascript" src="../js/phaser.min.js"></script>
-    <script type="text/javascript" src="../js/globals.js"></script>
-    <script type="text/javascript" src="../js/t_pi.js"></script>
-    <script type="text/javascript" src="../js/t_rad.js"></script>
-    <script type="text/javascript" src="../js/t_piexbranco.js"></script>
-<script type="text/javascript" src="../js/main.js"></script>
+        <script type="text/javascript" src="../js/phaser.min.js"></script>
+        <script type="text/javascript" src="../js/globals.js"></script>
+        <script type="text/javascript" src="../js/t_pi.js"></script>
+        <script type="text/javascript" src="../js/t_rad.js"></script>
+        <script type="text/javascript" src="../js/t_piexbranco.js"></script>
+        <script src="../js/main.js"></script>
 
 
-=======
->>>>>>> 726b725d3b63bbd929a8434c86c8345f684e15f8
 
 
 </body>
