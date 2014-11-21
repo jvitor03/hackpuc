@@ -74,13 +74,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 text-center">
-                    <h2>Let's Play</h2>
+                    <h2>O que é isso?</h2>
                     <hr class="star-light">
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-4 col-sm-offset-2">
-                    <p>Aqui faremos uma explicação sobre o que o nosso app se propoe e a quem ele é direcionado</p>
+                    <p>O Rabisque e Aprenda foi feito para ser o </p>
                 </div>
                 <div class="col-sm-4">
                     <p>Aqui falamos sobre quando e oonde ele foi desenvolvido</p>
@@ -183,8 +183,8 @@
                                             <ul class="list-group">
                                                 <li class="list-group-item">Leonardo Gonçalves</li>
                                                 <li class="list-group-item">Front-End</li>
-                                                <li class="list-group-item">google inc.</li>
-                                                <li class="list-group-item"><i class="fa fa-phone"></i> 000-000-0000 </li>
+                                                <li class="list-group-item"><a href="https://github.com/redheadevans"><i class="fa fa-2x fa-github"></i></a> <i style="font-size:25px;">|</i> <a href="https://www.passeidireto.com/perfil/2227014/">Passei Direto</a></li>
+                                                <li class="list-group-item"><i class="fa fa-phone"></i> 982-786-6440 </li>
                                                 <li class="list-group-item"><i class="fa fa-envelope"></i> john@example.com</li>
                                             </ul>
                                         </div>
@@ -207,7 +207,7 @@
                                             <ul class="list-group">
                                                 <li class="list-group-item">Rafael Giordanno</li>
                                                 <li class="list-group-item">Javascript</li>
-                                                <li class="list-group-item">google inc.</li>
+                                                <li class="list-group-item">SheetColdGames</li>
                                                 <li class="list-group-item"><i class="fa fa-phone"></i> 000-000-0000 </li>
                                                 <li class="list-group-item"><i class="fa fa-envelope"></i> john@example.com</li>
                                             </ul>
