@@ -236,6 +236,8 @@ function piStepTwo() {
 
 var piStep3QuadOk = false;
 
+var lastCircleToLine = 0;
+
 function piStepThree() {
 	if (pointerGrabbed) {
 		var tmp;
@@ -272,7 +274,27 @@ function piStepThree() {
 	
 		piStep3CircleToLine = -(100 * tmp2) + 300;
 
-		if (piStep3CircleToLine > 600) {
+		if (lastCircleToLine > piStep3CircleToLine) {
+			if (lastCircleToLine - piStep3CircleToLine > 300) {
+				piStep3CircleToLine = lastCircleToLine = 0;
+				currentCursorPoint.x = -300;
+				currentCursorPoint.y = 100;
+				pointerGrabbed = false;
+			} else {
+				lastCircleToLine = piStep3CircleToLine;
+			}
+		} else {
+			if (piStep3CircleToLine - lastCircleToLine > 300) {
+				piStep3CircleToLine = lastCircleToLine = 0;
+				currentCursorPoint.x = -300;
+				currentCursorPoint.y = 100;
+				pointerGrabbed = false;
+			} else {
+				lastCircleToLine = piStep3CircleToLine;
+			}
+		}
+
+		if (piStep3CircleToLine > 611) {
 			piStepDone[3] = true;
 		}
 		
@@ -308,15 +330,17 @@ function piRender(graphics) {
 		// Arco que vai ser desenrolado
 		// O objetivo é sair de Math.PI/2 e chegar até Math.PI*5/2
 		// Então vamos incrementando o valor do ângulo dentro de Math.PI
-		if (piStep3Angle >= Math.PI/2) {
-			graphics.arc(-300+piStep3CircleToLine, 0, 100, Math.PI*5/2, piStep3Angle, true);
-		} else {
-			graphics.arc(-300+piStep3CircleToLine, 0, 100, piStep3Angle, Math.PI*5/2, true);
+		if (!piTransition) {
+			if (piStep3Angle >= Math.PI/2) {
+				graphics.arc(-300+piStep3CircleToLine, 0, 100, Math.PI*5/2, piStep3Angle, true);
+			} else {
+				graphics.arc(-300+piStep3CircleToLine, 0, 100, piStep3Angle, Math.PI*5/2, true);
+			}
+
+			graphics.moveTo(-300, 100);
+			graphics.lineTo(-300 + piStep3CircleToLine, 100);
 		}
-
-		graphics.moveTo(-300, 100);
-		graphics.lineTo(-300 + piStep3CircleToLine, 100);
-
+		
 		// vamos pegar emprestado os círculos do passo anterior
 	} else if (piStepDone[1]) {
 		if (piTransition) {
@@ -345,7 +369,7 @@ function piRender(graphics) {
 
 function drawCurrentPointer(graphics) {
 	if (piStateTime % 1024 < 128) {
-		graphics.drawCircle(currentCursorPoint.x, currentCursorPoint.y, currentPointerRadius + Math.sin(pointer)*12);
+		graphics.drawCircle(currentCursorPoint.x, currentCursorPoint.y, currentPointerRadius + Math.sin(pointer.duration/100)*20);
 	}
 
 	graphics.beginFill(lnColor, 1);
