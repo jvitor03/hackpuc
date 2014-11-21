@@ -3,7 +3,7 @@
 // os nomes como algo significativo, então pode acabar me confundindo
 // Por essa razão, eu irei trabalhar com as variáveis de forma que elas
 // tenham nomes significativos referentes aos seus passos
-var piFinished = false;
+var piFinished = true;
 
 var initialPoint = new Ponto(0, 0);
 var destPoint = new Ponto(100, 0);
