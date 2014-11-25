@@ -170,7 +170,7 @@ function debugRender(){
 
 function isInPlace(){
 	//if (boneco.x >= 380 && boneco.x <= 455){
-	if(boneco.x > 385 && boneco.x <= 400){
+	if(boneco.x > 380 && boneco.x <= 405){
 		//if (boneco.y >= 330 && boneco.y <= 395 ){
 		if (boneco.y > 331 && boneco.y < 340){
 			//console.log("te");

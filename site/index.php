@@ -38,7 +38,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand logo-text" href="#page-top">Rabisque E Aprenda</a>
+                    <a class="navbar-brand logo-text" href="#page-top">Axioma</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -67,7 +67,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <img src="img/logoemprestada.jpg" height="171" width="236" alt="">
-                        <h1 class="page-header logo-text">Rabisque e Aprenda</h1>
+                        <h1 class="page-header logo-text">Axioma</h1>
                         <h1 class="page-header logo-text">Quem disse que matemática não é divertida?</h1>
                     </div>
                 </div>
@@ -85,7 +85,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-4 col-sm-offset-2">
-                    <p>O Rabisque e Aprenda foi feito para ser um ambiente de aprendizado interativo e intuitivo em diversas áreas. O projeto visa sair do paradigma das escolas e assim ajudar o aluno a enteder coisas que antes eram apenas aceitas por ele, através de exercícios práticos.</p>
+                    <p>O Axioma foi feito para ser um ambiente de aprendizado interativo e intuitivo em diversas áreas. O projeto visa sair do paradigma das escolas e assim ajudar o aluno a enteder coisas que antes eram apenas aceitas por ele, através de exercícios práticos.</p>
                 </div>
                 <div class="col-sm-4">
                     <p>A gente desenvolveu esse projeto durante a HACKPUC 2014. O evento reuniu pessoas interessadas em desenvolver novidades e coisas diferentes
