@@ -113,12 +113,12 @@ function piUpdate(game, pointer) {
 		currentCursorPoint.y = 100;
 		endTime += game.time.elapsed;
 
-		if (endTime > 4000) {
+		if (endTime > 8000) {
 			piText.kill();
 			piFinished = true;
 			pointerGrabbed = false;
 			boneco.x = graphics.x;
-			boneco.y = graphics.y-200;
+			boneco.y = graphics.y - 200;
 		}
 	}
 }
@@ -204,14 +204,13 @@ function piStepTwo() {
 		piStep2PhantomCircle = true;
 		currentCursorPoint.x = currentPoint.x;
 		currentCursorPoint.y = currentPoint.y;
-
 	} else {
 		if (piStep2PhantomCircle) {
 			piStep2PhantomCircle = false;
 			// verifica se o círculo foi jogado próximo de outro círculo
 			// A tolerância é razoável
 			for (var i = 0; i < piStep2CirclesCenters.length; i++) {
-				if (Phaser.Point.distance(piStep2CirclesCenters[i], currentCursorPoint) < 32) {
+				if (Phaser.Point.distance(piStep2CirclesCenters[i], currentCursorPoint) < 48) {
 					piStep2CircleSelected[i] = true;
 				}
 			}
@@ -227,7 +226,7 @@ function piStepTwo() {
 			piStep2FilledCircles = 0;
 		}
 	}
-	if (piStep2FilledCircles == piStep2CircleSelected.length) {
+	if (piStep2FilledCircles >= piStep2CircleSelected.length) {
 		// Vamo esticar esse círculo?
 		piStepDone[2] = true;
 		piTransition = true;
