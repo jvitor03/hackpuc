@@ -5,6 +5,9 @@
 // tenham nomes significativos referentes aos seus passos
 var piFinished = false;
 
+// Uma imagem que contém o símbolo pi na mesma cor do tema
+var piText;
+
 var initialPoint = new Ponto(0, 0);
 var destPoint = new Ponto(100, 0);
 
@@ -80,6 +83,10 @@ var piTransition = false;
 
 var endTime = 0;
 
+function piCreate() {
+	piText = game.add.sprite(1000, 1000, 'pi');
+}
+
 /**
  * @param game Contexto game criado na página principal
  */
@@ -109,6 +116,7 @@ function piUpdate(game, pointer) {
 		checkPointer(pointer, clickableRadiusArea);
 		piStepThree();
 	} else {
+
 		currentCursorPoint.x = -300;
 		currentCursorPoint.y = 100;
 		endTime += game.time.elapsed;
@@ -119,6 +127,10 @@ function piUpdate(game, pointer) {
 			pointerGrabbed = false;
 			boneco.x = graphics.x;
 			boneco.y = graphics.y - 200;
+
+			for (var i = 0; i < piStepDone.length; i++) {
+				piStepDone[i] = false;
+			}
 		}
 	}
 }
@@ -295,6 +307,7 @@ function piStepThree() {
 
 		if (piStep3CircleToLine > 611) {
 			piStepDone[3] = true;
+
 		}
 		
 	} else {

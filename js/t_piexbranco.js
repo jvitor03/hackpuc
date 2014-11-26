@@ -1,5 +1,9 @@
 
 var piexFinished = false;
+
+// Contém todos os números exibidos no plano cartesiano
+var piExNumberStrings;
+
 var dist = 0;
 var x = 0;
 var pontoatual = new Ponto(0,0);
@@ -13,6 +17,19 @@ function piexCreate(game){
 	//boneco.animations.add('smash', [0,1,2,3,4], 10, true);
 	
 	boneco.scale.setTo(0.5,0.5);
+
+	// código gambiarra
+	// Eu crio os textos globais com os números do plano fora da área de visão do jogo
+	// No disableText, ele é colocado na posição 400
+	piExNumberStrings = new Array(
+		game.add.text(92 , 800, "0", {fontSize: '24px', fill:'#000000'}),
+		game.add.text(192, 800, "1", {fontSize: '24px', fill:'#000000'}),
+		game.add.text(292, 800, "2", {fontSize: '24px', fill:'#000000'}),
+		game.add.text(392, 800, "3", {fontSize: '24px', fill:'#000000'}),
+		game.add.text(492, 800, "4", {fontSize: '24px', fill:'#000000'}),
+		game.add.text(592, 800, "5", {fontSize: '24px', fill:'#000000'}),
+		game.add.text(692, 800, "6", {fontSize: '24px', fill:'#000000'})
+	);
 }
 
 var highlight = false;
@@ -20,7 +37,7 @@ var piActive = false;
 var pos1x = 0;
 var posy = 35;
 var pos2x = 100;
-var pos3x =200;
+var pos3x = 200;
 var pos4x = 300;
 var pos5x = -100;
 var pos6x = -200;
@@ -150,15 +167,17 @@ function planoCartesiano(graphics){
 	//graphics.moveTo(Math.PI*100 - 300,60);
 	//graphics.lineTo(Math.PI*100 - 300,70);
 	if (disableGrid){
-		text = game.add.text(94, 400, "0", {fontSize: '24px', fill:'#000000'});
+		// text = game.add.text(94, 400, "0", {fontSize: '24px', fill:'#000000'});
+		// text = piExNumberStrings[0];
 	}
 	for (var x= 0; x<12;x++){
 		y = y+100;
 		graphics.lineStyle(3, cor_marcacoes_grid, 1);
 		graphics.moveTo(-600+y,35);
 		graphics.lineTo(-600+y,85);
-		if (disableGrid){
-			game.add.text(-8+y, 400, (y/100)-1, {fontSize: '24px', fill:'#000000'});
+		if (disableGrid && x < piExNumberStrings.length){
+			// game.add.text(-8+y, 400, (y/100)-1, {fontSize: '24px', fill:'#000000'});
+			piExNumberStrings[x].y = 400;
 		}
 	}
 
